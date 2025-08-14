@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+/* ===== HEADER / HERO ===== */
+
+.hero {
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px; /* Equal horizontal padding for symmetry */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo image (if used) */
+.logo-img {
+  height: 50px; /* adjust as needed */
+  width: auto;
+  padding: 8px 20px;
+  background-color: white;
+  border-radius: 50px; /* makes it an oval shape */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Text logo (if using text instead of image) */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: auto; /* push nav links to the right */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00c9a7;
+  border-bottom: 2px solid #00c9a7;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background: #00c9a7;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #00a98b;
+  transform: scale(1.05);
+}
+
+/* ===== MAIN SECTIONS ===== */
+
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section.alt {
+  background-color: #e6ecf3;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  margin-bottom: 1rem;
+}
+
+.image-placeholder {
+  background-color: #ccc;
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+  font-style: italic;
+  margin-top: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-placeholder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Replace placeholder with real image */
+.feature-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== FEATURES LIST ===== */
+
+.features {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.features li {
+  transition: background 0.3s ease, transform 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.features li:hover {
+  background: #d4f8f2;
+  transform: translateX(5px);
+}
+
+/* ===== CONTACT FORM ===== */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00c9a7;
+  box-shadow: 0 0 5px rgba(0, 201, 167, 0.5);
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #141e30;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #243b55;
+  transform: scale(1.03);
+}
+
+/* ===== FOOTER ===== */
+
+.footer {
+  background: #141e30;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
