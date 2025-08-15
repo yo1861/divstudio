@@ -1,77 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WebCraft On Demand</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sitios Web a Pedido</title>
+  <meta name="description" content="Creamos sitios web rápidos, accesibles y de alto impacto. Especializados en negocios locales y agentes inmobiliarios."/>
+  <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
- 
+  <style>
+    /* Estilos mínimos por si tu styles.css no tiene algunos */
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#111; margin:0; line-height:1.55; }
+    .navbar { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; background:#fff; position:sticky; top:0; border-bottom:1px solid #eee; z-index:50; }
+    .nav-links { list-style:none; display:flex; gap:16px; margin:0; padding:0; }
+    .nav-links a { text-decoration:none; color:#111; font-weight:500; }
+    .hero { background:linear-gradient(180deg,#f7f9ff 0%, #ffffff 100%); padding:64px 24px; text-align:center; }
+    .hero h1 { font-size: clamp(28px, 5vw, 48px); margin:0 0 12px; }
+    .hero p { margin:0 auto 20px; max-width:680px; color:#333; }
+    .btn-primary { display:inline-block; background:#00c9a7; color:#fff; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:600; }
+    .section { padding:56px 24px; max-width:1000px; margin:0 auto; }
+    .section.alt { background:#fafafa; }
+    .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; padding:0; margin:16px 0 0; }
+    .features li { list-style:"—  "; padding-left:6px; }
+    .image-placeholder { margin:16px 0; padding:48px; border:1px dashed #ddd; border-radius:12px; color:#666; text-align:center; }
+    .contact-form { display:grid; gap:12px; max-width:560px; margin-top:12px; }
+    .contact-form input, .contact-form textarea { padding:12px; border:1px solid #ddd; border-radius:10px; font-size:16px; }
+    .contact-form button { background:#00c9a7; color:#fff; border:none; padding:12px 16px; border-radius:10px; cursor:pointer; font-weight:700; }
+    .contact-form button:disabled { opacity:0.7; cursor:not-allowed; }
+    .footer { padding:24px; text-align:center; color:#555; border-top:1px solid #eee; }
+    .status-ok { color:#0a7a5c; }
+    .status-error { color:#b00020; }
+  </style>
 </head>
-
+<script src="script.js"></script>
 
 <body>
   <header class="hero">
     <nav class="navbar">
-      <div class="logo">
-        <img src="LOGOtransparente.png" alt="WebCraft logo" class="logo-img" />
+      <div class="logo" style="display:flex; align-items:center; gap:10px;">
+        <img src="LOGOtransparente.png" alt="Logo" class="logo-img" style="height:36px; width:auto;"/>
+        <strong>Sitios a Pedido</strong>
       </div>
-
       <ul class="nav-links">
-        <li><a href="#why">Why a Website?</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#realestate">Real Estate</a></li>
-        <li><a href="#contact">Get Started</a></li>
+        <li><a href="#why">¿Por qué un sitio web?</a></li>
+        <li><a href="#features">Características</a></li>
+        <li><a href="#realestate">Bienes Raíces</a></li>
+        <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
+
     <div class="hero-content">
-      <h1>Websites On Demand</h1>
-      <p>We build high-impact websites — fast, affordable, and beautiful. Perfect for real estate agents and local businesses.</p>
-      <a href="#contact" class="btn-primary">Start Today</a>
+      <h1>Sitios Web a Pedido</h1>
+      <p>Creamos sitios de alto impacto — rápidos, accesibles y bonitos. Perfectos para agentes inmobiliarios y negocios locales.</p>
+      <a href="#contact" class="btn-primary">Empezar hoy</a>
     </div>
   </header>
 
-  <section class="section" id="why">
-    <h2>Why Your Business Needs a Website</h2>
-    <p>Over 80% of consumers check a business online before deciding to trust it. A modern, professional website builds credibility, shows up in Google searches, and allows your clients to contact you 24/7.</p>
-    <p>Whether you're a real estate agent, hairdresser, mechanic, or freelancer — your website should reflect the quality of your work.</p>
-    <div class="image-placeholder">[Here should be an image of a happy customer browsing a website on a laptop]</div>
-  </section>
+  <main>
+    <section class="section" id="why">
+      <h2>¿Por qué tu negocio necesita un sitio web?</h2>
+      <p>Más del 80% de las personas busca a un negocio en internet antes de decidir si confiar en él. Un sitio moderno y profesional genera credibilidad, aparece en Google y permite que te contacten 24/7.</p>
+      <p>Ya seas agente inmobiliario, peluquera, mecánico o freelancer — tu web debe reflejar la calidad de tu trabajo.</p>
+      <div class="image-placeholder">[Aquí una imagen de alguien usando una laptop con un sitio]</div>
+    </section>
 
-  <section class="section alt" id="features">
-    <h2>What We Offer</h2>
-    <ul class="features">
-      <li>⚡ Fast Delivery (2–5 days)</li>
-      <li>🎯 Mobile-First Design</li>
-      <li>🛠️ SEO Optimized</li>
-      <li>💬 WhatsApp or Email Integration</li>
-      <li>🖼️ Photo Galleries and Listings (for real estate)</li>
-      <li>📍 Google Maps and Contact Forms</li>
-    </ul>
-    <div class="image-placeholder">[Here should be an image of a sleek real estate website on a phone]</div>
-  </section>
+    <section class="section alt" id="features">
+      <h2>Lo que ofrecemos</h2>
+      <ul class="features">
+        <li>⚡ Entrega rápida (2–5 días)</li>
+        <li>🎯 Diseño Mobile-First</li>
+        <li>🛠️ SEO básico</li>
+        <li>💬 Integración con WhatsApp o Email</li>
+        <li>🖼️ Galerías y listados (para real estate)</li>
+        <li>📍 Google Maps y formularios de contacto</li>
+      </ul>
+      <div class="image-placeholder">[Aquí un mockup de sitio en móvil]</div>
+    </section>
 
-  <section class="section" id="realestate">
-    <h2>Our Focus: Real Estate Agents</h2>
-    <p>Showcase your listings, your experience, and build trust with clients. We specialize in creating modern, fast-loading websites that make your properties shine.</p>
-    <p>Include property sliders, inquiry forms, and even integrations with your MLS.</p>
-    <div class="image-placeholder">[Here should be a mockup of a real estate homepage]</div>
-  </section>
+    <section class="section" id="realestate">
+      <h2>Nuestro foco: agentes inmobiliarios</h2>
+      <p>Mostrá tus propiedades, tu experiencia y generá confianza. Nos especializamos en sitios rápidos y modernos que hacen brillar tus listados.</p>
+      <p>Incluí sliders, formularios de consulta e integraciones con tu MLS.</p>
+      <div class="image-placeholder">[Aquí un mockup de página principal inmobiliaria]</div>
+    </section>
 
-  <section class="section alt" id="contact">
-    <h2>Get Your Website</h2>
-    <p>Send us your info and we’ll build a complete site in days. No tech knowledge needed.</p>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Email" required />
-      <textarea placeholder="Tell us what you need..." required></textarea>
-      <button type="submit">Request a Quote</button>
-    </form>
-  </section>
+    <section class="section alt" id="contact">
+      <h2>Contacto</h2>
+      <p>Completá tus datos y recibo tu consulta por email.</p>
+
+      <!-- FORM: Opción B2 (fetch/AJAX hacia Formspree) -->
+      <form class="contact-form" action="https://formspree.io/f/mjkozoyv" method="POST" novalidate>
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu email" required />
+        <textarea name="mensaje" placeholder="Contame qué necesitás..." required></textarea>
+
+        <!-- Honeypot anti-spam (oculto) -->
+        <input type="text" name="empresa" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <!-- Asunto opcional que llega al correo -->
+        <input type="hidden" name="_subject" value="Nuevo contacto desde tu web" />
+
+        <button type="submit">Enviar mensaje</button>
+        <!-- Feedback accesible -->
+        <p class="form-feedback" aria-live="polite" style="margin-top:.5rem;"></p>
+      </form>
+    </section>
+  </main>
 
   <footer class="footer">
-    <p>&copy; 2025 WebCraft. All rights reserved.</p>
+    <p>&copy; 2025 · Sitios a Pedido · Todos los derechos reservados.</p>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- Script B2: envío AJAX + feedback sin recargar -->
+  
 </body>
 </html>
