@@ -1,14 +1,20 @@
 // ===== Navegación con scroll suave =====
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
-    e.preventDefault();
-    const id = a.getAttribute('href').slice(1);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    const href = a.getAttribute('href');
+    if (href && href.length > 1) {
+      e.preventDefault();
+      const id = href.slice(1);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      // Cerrar menú mobile si está abierto
+      const toggle = document.getElementById('nav-toggle');
+      if (toggle) toggle.checked = false;
+    }
   });
 });
 
-// ===== Botón "volver arriba" =====
+// ===== Botón "volver arriba" (opcional) =====
 (function setupScrollTop() {
   const scrollBtn = document.createElement('button');
   scrollBtn.innerText = '↑';
@@ -17,18 +23,18 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
 
   Object.assign(scrollBtn.style, {
     position: 'fixed',
-    bottom: '30px',
-    right: '30px',
+    bottom: '90px',
+    right: '26px',
     padding: '10px 15px',
     fontSize: '18px',
     borderRadius: '50%',
     border: 'none',
-    backgroundColor: '#00c9a7',
+    backgroundColor: '#6b5cff',
     color: '#fff',
     cursor: 'pointer',
     display: 'none',
     boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-    zIndex: '1000'
+    zIndex: '999'
   });
   scrollBtn.title = "Volver arriba";
 
@@ -40,12 +46,10 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
   });
 })();
 
-// ===== Envío de formulario (Formspree, AJAX) =====
-// Requiere que el <form> tenga action="https://formspree.io/f/TU_ENDPOINT" y method="POST"
+// ===== Envío Formspree (AJAX) =====
 (function setupContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
-
   const feedback = document.querySelector('.form-feedback');
 
   function setStatus(msg, ok = true) {
@@ -57,36 +61,30 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    // Honeypot: si está relleno, es bot → no enviamos
     const hp = form.querySelector('input[name="empresa"]');
     if (hp && hp.value.trim() !== '') { form.reset(); return; }
 
-    // Deshabilitar botón mientras se envía
     const btn = form.querySelector('button[type="submit"]');
     if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
 
     const data = new FormData(form);
-
     try {
       const resp = await fetch(form.action, {
         method: 'POST',
         body: data,
         headers: { 'Accept': 'application/json' }
       });
-
       if (resp.ok) {
         setStatus('¡Gracias! Tu mensaje fue enviado.', true);
         form.reset();
       } else {
-        // Intentar leer errores devueltos por Formspree
         let msg = 'Hubo un problema al enviar. Probá de nuevo o escribime por email.';
         try {
           const json = await resp.json();
           if (json && json.errors && json.errors.length) {
             msg = json.errors.map(e => e.message).join(' ');
           }
-        } catch (_) {}
+        } catch {}
         setStatus(msg, false);
       }
     } catch {
