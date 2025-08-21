@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agencia Digital — Modelo Modelit (v3)</title>
+  <meta name="description" content="Servicios digitales: sitios web, SEO, contenidos y automatización. Enfocados en resultados y valor."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.modelit.v3.css"/>
+</head>
+<body>
+  <!-- Header con color más marcado -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="#inicio" aria-label="Ir a inicio">
+        <!-- LOGO: cambiá 'terrenasitlogo.png' por la ruta a tu logo -->
+        <img src="terrenasitlogo.png" alt="Logo" class="brand-logo"/>
+        <span class="brand-text">Sitios a Pedido</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
+      <label for="nav-toggle" class="hamburger" aria-hidden="true"><span></span></label>
+
+      <ul class="nav-links" role="menu">
+        <li role="none"><a role="menuitem" href="#inicio">Inicio</a></li>
+        <li role="none"><a role="menuitem" href="#nosotros">Nosotros</a></li>
+        <li role="none"><a role="menuitem" href="#servicios">Servicios</a></li>
+        <li role="none"><a role="menuitem" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO con gradientes/blobs CSS reforzados -->
+  <section id="inicio" class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Soluciones asequibles y de alto impacto</p>
+      <h1 class="hero-title">Impulsá tu negocio con <span>servicios digitales</span> que convierten</h1>
+      <p class="hero-subtitle">
+        Diseño web, posicionamiento, contenidos y automatización. Equipo ágil, procesos claros y foco en ROI.
+      </p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l1.5-5.5L16 3a2.121 2.121 0 0 1 3 3L6.5 18.5 1 21zM5 19l2.5-2.5"/></svg>
+          <span>Conversemos</span>
+        </a>
+        <a href="#servicios" class="btn btn-ghost">
+          <span>Ver servicios</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-blob-1" aria-hidden="true"></div>
+    <div class="hero-blob-2" aria-hidden="true"></div>
+  </section>
+
+  <!-- BLOQUE DE IMAGEN (editable como el logo) -->
+  <section class="section container" id="imagen-destacada" aria-label="Imagen destacada">
+    <h2 class="section-title">Imagen destacada</h2>
+    <p class="section-sub">Podés colocar una imagen aquí para reforzar el mensaje del hero.</p>
+    <div class="image-block">
+      <div class="image-placeholder">aca va foto de XXXXX</div>
+      <!-- IMAGEN: cambiá 'ruta/a/tu/imagen.jpg' por la ruta real de tu imagen -->
+      <img class="image-real" src="ruta/a/tu/imagen.jpg" alt="Imagen destacada" />
+    </div>
+  </section>
+
+  <!-- VALUE PROPS (3 cards) -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="grid-3 gap">
+        <article class="card">
+          <h3>Rentable</h3>
+          <p>Paquetes claros, tiempos definidos y costos optimizados para PYMEs.</p>
+        </article>
+        <article class="card">
+          <h3>Inteligente</h3>
+          <p>Estrategia, analítica y pruebas A/B para escalar resultados reales.</p>
+        </article>
+        <article class="card">
+          <h3>Ágil</h3>
+          <p>Iteraciones rápidas, entregas continuas y comunicación directa.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS (3 columnas) -->
+  <section id="servicios" class="section container">
+    <h2 class="section-title">Servicios</h2>
+    <p class="section-sub">Elegí el paquete que mejor se adapte a tus objetivos.</p>
+    <div class="grid-3 gap">
+      <article class="service">
+        <h3>Implementación Web</h3>
+        <p>Sitios rápidos, accesibles y listos para convertir. Hosting, dominios y analítica.</p>
+      </article>
+      <article class="service">
+        <h3>Contenido & SEO</h3>
+        <p>Arquitectura, copy y SEO on-page para atraer tráfico de calidad.</p>
+      </article>
+      <article class="service">
+        <h3>Automatización & Ads</h3>
+        <p>Integraciones con CRM, email marketing y campañas de pago.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- NOSOTROS (texto) -->
+  <section id="nosotros" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Nosotros</h2>
+      <p class="section-sub">Equipo con base en LATAM, trabajando en tu huso horario.</p>
+      <p class="centered">Entregamos soluciones claras, medibles y escalables. Nuestro enfoque: simple, directo y efectivo.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO (Formspree intacto) -->
+  <section id="contacto" class="section container">
+    <h2 class="section-title">Contacto</h2>
+    <p class="section-sub">Dejanos tus datos y te respondemos a la brevedad.</p>
+    <form class="contact-form" action="https://formspree.io/f/mjkozoyv" method="POST" novalidate>
+      <div class="grid-2 gap">
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
+        <input type="email" name="email" placeholder="Tu email" required />
+      </div>
+      <textarea name="mensaje" placeholder="Contanos qué necesitás…" required></textarea>
+      <!-- Honeypot -->
+      <input type="text" name="empresa" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="_subject" value="Nuevo contacto desde tu web" />
+      <button type="submit" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l1.5-5.5L16 3a2.121 2.121 0 0 1 3 3L6.5 18.5 1 21zM5 19l2.5-2.5"/></svg>
+        <span>Enviar</span>
+      </button>
+      <p class="form-feedback" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 · Sitios a Pedido · Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- FAB sólido teal con texto blanco -->
+  <a href="#contacto" class="fab" aria-label="Contactanos">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8v8a3 3 0 0 1-3 3H6l-3 3V5a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3z"/></svg>
+    <span>¡Contáctanos!</span>
+  </a>
+
+  <script src="script.modelit.v3.js" defer></script>
+</body>
+</html>
