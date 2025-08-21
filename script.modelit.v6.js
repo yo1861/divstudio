@@ -1,4 +1,4 @@
-// Scroll suave + cerrar menú en mobile
+// Smooth scroll & close mobile menu
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const href = a.getAttribute('href');
@@ -38,4 +38,22 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }catch(e){ setStatus('Error de conexión. Intentá nuevamente.', false); }
     finally{ if (btn){ btn.disabled = false; btn.textContent = 'Enviar'; } }
   });
+})();
+
+// Reveal on scroll: hero + pills + service cards
+(function revealOnScroll(){
+  const items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || items.length === 0) {
+    items.forEach(el => el.classList.add('visible'));
+    return;
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    })
+  }, { threshold: 0.18 });
+  items.forEach(el => obs.observe(el));
 })();
